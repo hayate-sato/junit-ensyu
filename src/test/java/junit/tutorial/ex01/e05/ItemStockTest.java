@@ -70,5 +70,4 @@ class ItemStockTest {
 		assertEquals(1, answer);
 
 	}
-
 }
