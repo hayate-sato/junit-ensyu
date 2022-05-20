@@ -36,9 +36,9 @@ class FrameworksTest {
 	void test(ApplicationServer applicationServer, Database database, boolean support) {
 		boolean answer = Frameworks.isSupport(applicationServer, database);
 		if (support == true) {
-			assertTrue(answer);
+			assertTrue(answer, "期待されていた結果と異なるものが出ました");
 		} else if (support == false) {
-			assertFalse(answer);
+			assertFalse(answer, "期待されていた結果と異なるものが出ました");
 		}
 
 	}
