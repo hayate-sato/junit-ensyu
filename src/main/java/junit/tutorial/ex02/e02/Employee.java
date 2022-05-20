@@ -1,6 +1,8 @@
 package junit.tutorial.ex02.e02;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -47,5 +49,26 @@ public class Employee {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public static void main(String[] args) {
+		try {
+			InputStream in = new FileInputStream(
+					"/env/workspace/junit-ensyu/src/main/java/junit/tutorial/ex02/e02/Employee.txt");
+//			InputStream input = getClass().getResourceAsStream("Employee.txt");
+
+			List<Employee> emp = Employee.load(in);
+			System.out.println(emp);
+			System.out.println(emp.get(0).firstName);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+
+		}
+
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
 	}
 }
