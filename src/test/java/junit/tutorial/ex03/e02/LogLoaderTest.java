@@ -1,7 +1,5 @@
 package junit.tutorial.ex03.e02;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -28,7 +26,7 @@ class LogLoaderTest {
 
 	@Test
 	void test() {
-		fail("Not yet implemented");
+		LogAnalyzer logAnalyzer = new LogAnalyzer();
 	}
 
 }
